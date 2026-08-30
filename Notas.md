@@ -68,3 +68,20 @@ http://localhost:8080/
   - Pipeline -> usado para los flujos de CI/CD -> Es mas avanzado
   - Multibranch pipeline -> para proyectos con varias ramas en git
   - Maven project -> para proyectos en maven
+
+# Buils
+
+- Es una ejecucion de un job
+- Cada vez q haga una ejecucion se va a generar un build
+  - Obtener el codigo fuente
+  - Ejecuta los pasas que has definido
+  - Registra la salida en el console
+  - Guardar los artefactos(opcional)
+  - Muestra el resultado del build en el interfaz
+
+# Disparadores automaticos(TRIGGER)
+
+- Polling SCM -> revisar periodicamente si hay cambios en el repo git
+- Webhook -> Dispara el job cuando hay algun cambio en el codigo
+- Programacion cron -> Se ejecuta en intervalos de tiempo
+- Disparo por otro job -> Un job podria ejecutar otro job cuando termine
