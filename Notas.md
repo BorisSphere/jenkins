@@ -85,3 +85,10 @@ http://localhost:8080/
 - Webhook -> Dispara el job cuando hay algun cambio en el codigo
 - Programacion cron -> Se ejecuta en intervalos de tiempo
 - Disparo por otro job -> Un job podria ejecutar otro job cuando termine
+
+# Variables
+
+- BUILD_NUMBER: Numero del build actual
+- JOB_NAME: Nombre del job q se esta ejecutando
+- WORKSPACE: Directorio donde jenkins almacena los archivos del job
+- GIT_COMMIT: Hash del commit si el job usa git
