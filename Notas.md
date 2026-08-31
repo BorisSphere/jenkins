@@ -92,3 +92,8 @@ http://localhost:8080/
 - JOB_NAME: Nombre del job q se esta ejecutando
 - WORKSPACE: Directorio donde jenkins almacena los archivos del job
 - GIT_COMMIT: Hash del commit si el job usa git
+
+# Ejecutar un programa python desde jenkins
+
+- docker exec -it --user root jenkins /bin/bash
+- apt-get install -y python3 python3-pip
