@@ -3,6 +3,12 @@
 set -e
 
 echo "======================================"
+echo "Eliminando entorno virtual anterior"
+echo "======================================"
+
+rm -rf .venv
+
+echo "======================================"
 echo "Creando entorno virtual"
 echo "======================================"
 
@@ -27,16 +33,15 @@ echo "======================================"
 pip install -r requirements.txt
 
 echo "======================================"
-echo "Ejecutando pruebas con pytest"
+echo "Ejecutando pruebas"
 echo "======================================"
 
 mkdir -p reports
 
 pytest tests/ \
-    --junitxml=reports/test-results.xml \
-    --html=reports/test-report.html
+  --junitxml=reports/test-results.xml \
+  --html=reports/test-report.html
 
 echo "======================================"
 echo "Pruebas finalizadas"
-echo "Resultados disponibles en reports/"
 echo "======================================"
