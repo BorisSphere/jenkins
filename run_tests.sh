@@ -1,47 +1,18 @@
-#!/bin/bash
-
-set -e
-
-echo "======================================"
-echo "Eliminando entorno virtual anterior"
-echo "======================================"
-
-rm -rf .venv
-
-echo "======================================"
-echo "Creando entorno virtual"
-echo "======================================"
-
-python3 -m venv .venv
-
-echo "======================================"
-echo "Activando entorno virtual"
-echo "======================================"
-
-source .venv/bin/activate
-
-echo "======================================"
-echo "Actualizando pip"
-echo "======================================"
-
-python -m pip install --upgrade pip
-
-echo "======================================"
-echo "Instalando dependencias"
-echo "======================================"
-
-pip install -r requirements.txt
-
-echo "======================================"
-echo "Ejecutando pruebas"
-echo "======================================"
-
-mkdir -p reports
-
-pytest tests/ \
-  --junitxml=reports/test-results.xml \
-  --html=reports/test-report.html
-
-echo "======================================"
-echo "Pruebas finalizadas"
-echo "======================================"
+#! /bin/bash
+echo " Iniciando ejecución de pruebas en Jenkins ..."
+# Verificar si el entorno virtual existe
+if [! -d "venv" ]; then echo " Entorno virtual no encontrado. Creándolo..." python3 -m venv venv
+fi
+# Activar el entorno virtual correctamente
+if [ -f "venv/bin/activate" ]; then source venv/bin/activate
+elif [ -f "venv/Scripts/activate" ]; then # Para Windows
+source venv/Scripts/activate
+else
+echo " Error: No se pudo activar el entorno virtual."
+exit 1
+fi
+# Verificar si 'pip" está instalado correctamente echo "Instalando dependencias... "
+pip install -upgrade pip - break-system-packages pip install -r requirements.txt -break-system-packages
+# Ejecutar las pruebas
+echo "s Ejecutando pruebas con pytest ..."
+venv/bin/python -m pytest tests/ --junitxml=reports/test-results.xml --html=reports/report.html -- self-con echo "Pruebas finalizadas. Reportes en reports/"
