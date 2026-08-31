@@ -57,6 +57,9 @@ User: admin
 pass: admin123
 http://localhost:8080/
 
+- Proyecto con maven
+  mvn archetype:generate -DgroupId=com.miempresa.proyecto -DartifactId=mi-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
 # Jobs
 
 - Una tarea automatizada -> servidor jenkins
@@ -97,3 +100,21 @@ http://localhost:8080/
 
 - docker exec -it --user root jenkins /bin/bash
 - apt-get install -y python3 python3-pip
+
+# Pipelines
+
+- Conjunto de etapas que nos dicen como se va a construir, probar y desplegar nuestra app
+  Por que usarlo?
+  - Automatizacion completa desde la compilacion -> Despliegue
+  - Usamos un archivo jenkinsfile(define todos los pasos q va a seguir un pipeline)
+  - Multiples agentes y nodos
+- Pipeline Declarativa
+  - Sencilla
+  - Mas facil
+  - pipeline{}
+  - Config estandar y seguras
+- Pipeline Scripted
+  - Basada en groovy
+  - Mas flexible y potente
+  - node{}
+  - Personalizacion avanzada y logica completa
