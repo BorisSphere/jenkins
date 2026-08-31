@@ -1,12 +1,42 @@
 #!/bin/bash
 
-echo "..Activando entorno virtual"
+set -e
+
+echo "======================================"
+echo "Creando entorno virtual"
+echo "======================================"
+
+python3 -m venv .venv
+
+echo "======================================"
+echo "Activando entorno virtual"
+echo "======================================"
+
 source .venv/bin/activate
 
-echo "..Instalando dependencias"
+echo "======================================"
+echo "Actualizando pip"
+echo "======================================"
+
+python -m pip install --upgrade pip
+
+echo "======================================"
+echo "Instalando dependencias"
+echo "======================================"
+
 pip install -r requirements.txt
 
-echo "..Ejecutando pruebas con pytest"
-pytest tests/ --junitxml=reports/test-results.xml --html=reports/test-results.html --self-contained-html
+echo "======================================"
+echo "Ejecutando pruebas con pytest"
+echo "======================================"
 
-echo "..Pruebas finalizadas resultados estan en reports"
+mkdir -p reports
+
+pytest tests/ \
+    --junitxml=reports/test-results.xml \
+    --html=reports/test-report.html
+
+echo "======================================"
+echo "Pruebas finalizadas"
+echo "Resultados disponibles en reports/"
+echo "======================================"
