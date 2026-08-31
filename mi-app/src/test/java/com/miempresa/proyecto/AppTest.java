@@ -1,12 +1,14 @@
 package com.miempresa.proyecto;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class AppTest 
-    extends TestCase
 {
-    
+    @Test
+    public void testSumar(){
+        App app = new App();
+        assertEquals(5,app.sumar(2,3));
+    }
    
 }
