@@ -9,8 +9,6 @@ def test_suma():
     assert suma(3,2)=5
     assert suma(3,3)=6
 
-def test_suma_fail():
-    assert suma(1,2)=6
     
 
 
