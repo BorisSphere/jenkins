@@ -1,30 +1,30 @@
-pipeline{
+pipeline {
     agent any
     stages {
-        stage('Build'){
-            steps{
-                sh 'mvn clean install'
+        stage('Build') {
+            steps {
+                sh 'mvn -f mi-app/pom.xml clean install'
             }
         }
-        stage('Test'){
-            steps{
-                sh 'mvn test'
+        stage('Test') {
+            steps {
+                sh 'mvn -f mi-app/pom.xml test'
             }
         }
-        stage('Deploy'){
-            steps{
+        stage('Deploy') {
+            steps {
                 echo "Simulando un despliegue a un servidor"
             }
         }
     }
-    post{
-        always{
+    post {
+        always {
             echo "Siempre se ejecuta"
         }
-        success{
+        success {
             echo "Exito"
         }
-        failure{
+        failure {
             echo "Fallo"
         }
     }
