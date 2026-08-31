@@ -100,6 +100,7 @@ http://localhost:8080/
 
 - docker exec -it --user root jenkins /bin/bash
 - apt-get install -y python3 python3-pip
+- apt-get update && apt-get install -y openjdk-21-jdk maven
 
 # Pipelines
 
