@@ -9,6 +9,7 @@ def test_suma():
     assert suma(3,2)==5
     assert suma(3,3)==6
     assert suma(4,4)==8
+    assert suma(5,5)==10
 
     
 
