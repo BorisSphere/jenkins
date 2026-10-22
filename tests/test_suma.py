@@ -8,6 +8,7 @@ def test_suma():
     assert suma(1,2)==3
     assert suma(3,2)==5
     assert suma(3,3)==6
+    assert suma(4,4)==8
 
     
 
