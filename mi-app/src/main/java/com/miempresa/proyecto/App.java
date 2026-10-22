@@ -1,14 +1,11 @@
 package com.miempresa.proyecto;
 
-
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World22!");
     }
 
-    public int sumar(int a,int b){
+    public int sumar(int a, int b) {
         return a + b;
     }
 }
